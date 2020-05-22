@@ -7,7 +7,7 @@ describe('It can type text into the box', () =>{
     })
 })
 
-describe('It can select multiple topping', () => {
+describe('It can select multiple toppings', () => {
     it('Can navigate and select multiple toppings', () => {
         cy.visit('http://localhost:3000/')
         cy.url().should('include', 'localhost')
@@ -30,6 +30,8 @@ describe('It can submit a form', () => {
         cy.get('input[name="ham"]').click()
         cy.get('input[name="onion"]').click()
         cy.get('input[name="bacon"]').click()
+        cy.get('input[name="instructions"]').type('Dont knock')
+        cy.get('button.review').click()
         cy.get('button.submit').click()
     })
 })
